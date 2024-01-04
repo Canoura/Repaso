@@ -1,6 +1,5 @@
 //const numerosintrododucidos=document.getElementById("numerosintroducidos");
-const resultado=document.getElementById("resultado");
-
+const resultadoElement = document.getElementById("resultado");
 
 function myFunction() {
     const numero1 = parseInt(document.getElementById('numero1').value);
@@ -10,7 +9,14 @@ function myFunction() {
 
     var numeros = [numero1, numero2, numero3, numero4];
 
-    numeros.sort(function(a, b) { return b - a; }); //codigo para ordenar los numero de mayor a menor
+    numeros.sort(function(a, b) { return b - a; }); // Código para ordenar los números de mayor a menor
 
-    resultado.textContent = `EL ORDEN DE MAYOR A MENOR DE LOS NÚMEROS INTRODUCIDOS ES: ${numeros.join(', ')}`; 
-}
+    var resultadoescrito = "EL ORDEN DE MAYOR A MENOR DE LOS NÚMEROS INTRODUCIDOS ES: ";
+
+    for (var i = 0; i < numeros.length; i++) {
+      
+      resultadoescrito += numeros[i] + '  ' ;
+    }
+    
+    resultadoElement.textContent = resultadoescrito; 
+} 
