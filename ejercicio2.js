@@ -6,20 +6,11 @@ function myFunction() {
     const numero1 = parseInt(document.getElementById('numero1').value);
     const numero2 = parseInt(document.getElementById('numero2').value);
     const numero3 = parseInt(document.getElementById('numero3').value);
-    
-if(numero1>=numero2 && numero1>=numero3 && numero2>=numero3){
-    resultado.textContent = `EL ORDEN DE MAYOR A MENOR DE LOS NÚMEROS INTRODUCIDOS ES: ${numero1}, ${numero2}, ${numero3}`;
-}else if(numero1>=numero2 && numero1>=numero3 && numero2<=numero3){
-    resultado.textContent = `EL ORDEN DE MAYOR A MENOR DE LOS NÚMEROS INTRODUCIDOS ES: ${numero1}, ${numero3}, ${numero2}`;
+    const numero4 = parseInt(document.getElementById('numero4').value);
 
-}else if(numero2>=numero1 && numero2>=numero3 && numero1>=numero3){
-    resultado.textContent = `EL ORDEN DE MAYOR A MENOR DE LOS NÚMEROS INTRODUCIDOS ES: ${numero2}, ${numero1}, ${numero3}`;
-}else if(numero2>=numero1 && numero2>=numero3 && numero1<=numero3){
-    resultado.textContent = `EL ORDEN DE MAYOR A MENOR DE LOS NÚMEROS INTRODUCIDOS ES: ${numero2}, ${numero3}, ${numero1}`;
+    var numeros = [numero1, numero2, numero3, numero4];
 
-}else if(numero3>=numero1 && numero3>=numero2 && numero1>=numero2){
-    resultado.textContent = `EL ORDEN DE MAYOR A MENOR  DE LOS NÚMEROS INTRODUCIDOS ES: ${numero3}, ${numero1}, ${numero2}`;
-}else if(numero3>=numero1 && numero3>=numero2 && numero1<=numero2){
-    resultado.textContent = `EL ORDEN DE MAYOR A MENOR DE LOS NÚMEROS INTRODUCIDOS ES: ${numero3}, ${numero2}, ${numero1}`;
-}
+    numeros.sort(function(a, b) { return b - a; }); //codigo para ordenar los numero de mayor a menor
+
+    resultado.textContent = `EL ORDEN DE MAYOR A MENOR DE LOS NÚMEROS INTRODUCIDOS ES: ${numeros.join(', ')}`; 
 }
